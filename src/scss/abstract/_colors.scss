@@ -6,9 +6,10 @@
 :root {
   --white-co: #fff;
   --black-co:#000;
-  --text-co:  #3A3A3A;
-  --heading: #111;
-  --page-bg: #000;
+  --text-co:  #7e7c7c;
+  --heading: #302f2f;
+  --page-bg: var(--white-co);
+
   --burger-color: var(--black-co);
   --burger-active-color: var(--black-co);
 }
