@@ -5,6 +5,10 @@
    ==== Main ====
 */
 
-.page  {
-
+.page {
+   @include adaptiveValue('padding-top',108,70);
+  // .page__hero
+  &__hero {
+   @include adaptiveValue('padding-bottom',140,80);
+  }
 }

@@ -10,12 +10,13 @@
   background-color:var(--white-co);
   z-index: 50;
   @include flex-center();
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
   @media (max-width: $breakpoint768){
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+
 
     &:after {
       content: "";

@@ -2,7 +2,7 @@
 // Adaptive value mixins settings
 $minWidth: 320;
 $maxWidth: 1920;
-$maxWidthContainer: 1230;
+$maxWidthContainer: 1240;
 $responsiveType: 1;
 // Container
 $containerWidth: $maxWidthContainer ;
@@ -14,4 +14,4 @@ $breakpoint992: 991.98 + px;
 $breakpoint768: 767.98 + px ;
 $breakpoint480: 479.98 + px;
 $burgerBreakpoint: $breakpoint768;
-
+$breakpointContainer: 1269.9 + px
