@@ -50,7 +50,7 @@ export function menuInit() {
     document.addEventListener("click", function(e) {
       if (e.target.closest(".icon-menu")) {
         document.documentElement.classList.toggle("menu-open");
-        document.querySelector(".menu__body").classList.toggle("_active");
+        document.querySelector(".menu").classList.toggle("_active");
         // document.querySelector("body").classList.toggle("_locked")
         // window.addEventListener("resize", () => {
         //   document.querySelector("body").classList.remove("_locked");
