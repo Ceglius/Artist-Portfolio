@@ -87,6 +87,15 @@ const config = {
       },
       inject: true,
     }),
+    new HtmlWebpackPlugin({
+      filename: "about.html",
+      template: path.join(__dirname, "../src/views/pages/about.hbs"),
+      minify: {
+        collapseWhitespace: false,
+        removeComments: false,
+      },
+      inject: true,
+    }),
     new BeautifyHtmlWebpackPlugin(),
 
     new CopyPlugin({

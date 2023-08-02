@@ -19,7 +19,7 @@
       max-width: 80%;
       margin: 0 auto;
       border: 1px solid;
-      padding: rem(20);
+      padding: rem(30) rem(20);
       border-radius: rem(20);
       @include flex-column($gap:15);
       align-items: center;
