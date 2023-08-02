@@ -60,8 +60,24 @@ export function menuInit() {
   }
 }
 
-export async function logJSONData(url) {
-  const response = await fetch(url);
-  const jsonData = await response.json();
-  console.log(jsonData);
+export function hideHeader() {
+  let prevScrollPos = window.scrollY;
+
+function handleScroll() {
+  const currentScrollPos = window.scrollY;
+  const header = document.querySelector(".header");
+
+  if (prevScrollPos > currentScrollPos) {
+    header.classList.add("_visible");
+    header.classList.remove("_hidden");
+  } else {
+    header.classList.add("_hidden");
+    header.classList.remove("_visible");
+  }
+
+  prevScrollPos = currentScrollPos;
 }
+
+window.addEventListener("scroll", handleScroll);
+}
+
