@@ -4,6 +4,66 @@
   ==== Footer ====
 */
 .footer {
- text-align: center;
-  padding: rem(20);
+  padding: rem(15) 0;
+
+  &__container {
+    @include flex-sb-center($gap: 0);
+    @include adaptiveValue("gap", 40, 20);
+    flex-wrap: wrap;
+
+
+  }
+  // .footer__text
+  &__text {
+    width: 100%;
+    order: 3;
+    text-align: center;
+  }
+
+  &__addrees {
+    order: -1;
+    address {
+      line-height: 120%;
+      color: var(--text-co);
+      @include adaptiveValue('font-size',18,14);
+      @media (any-hover: hover) {
+        
+        &:hover {
+          color: var(--black-co);
+        }
+      }
+    }
+  }
+}
+
+.socials {
+  align-self: flex-start;
+  // .socials__list
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    @include adaptiveValue("gap", 20, 15);
+    justify-content: center;
+
+    @media (min-width: $breakpoint768) {
+      justify-content: flex-end;
+    }
+  }
+
+  // .socials__item
+  &__item {
+  }
+
+  // .socials__link
+  &__link {
+    @include adaptiveValue("font-size", 24, 18);
+    color: var(--black-co);
+    display: block;
+    transition: all 0.3s ease;
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
 }
