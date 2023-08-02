@@ -6,12 +6,14 @@
 */
 
 .page {
-  @include adaptiveValue("padding-top", 108,80);
-  // .page__hero
+   
+  @include adaptiveValue("padding-top", 108, 80);
   &__hero,
   &__latest,
   &__latest-blogs,
-  &__quote {
+  &__quote,
+  &__testimonials,
+  &__subscribe  {
     @include adaptiveValue("padding-bottom", 140, 80);
   }
 }

@@ -1,4 +1,4 @@
-import Swiper, { Navigation } from "swiper";
+import Swiper, { Navigation, Pagination,Parallax } from "swiper";
 import "swiper/swiper-bundle.css";
 
 function initSliders() {
@@ -55,6 +55,37 @@ function initSliders() {
 					spaceBetween: 30,
 				},
 			},
+			
+     
+     
+    });
+  }
+  if (document.querySelector(".testimonials-swiper")) {
+    new Swiper(".testimonials-swiper", {
+      modules: [Pagination, Parallax],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 1,
+      autoHeight: true,
+      spaceBetween: 15,
+      loop: true,
+      /*
+			// Ефекти
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+  
+			pagination: {
+				el: '.testimonials-swiper__dots',
+				clickable: true,
+			},
+	
+
+
 			
      
      

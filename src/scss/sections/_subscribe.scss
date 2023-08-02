@@ -1,0 +1,80 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+
+/*
+   ==== Subscribe ====
+*/
+
+
+.subscribe {
+
+   // .subscribe__container
+
+   &__container {
+   }
+
+   // .subscribe__form
+
+   &__form {
+      max-width: 80%;
+      margin: 0 auto;
+      border: 1px solid;
+      padding: rem(20);
+      border-radius: rem(20);
+      @include flex-column($gap:15);
+      align-items: center;
+
+      @media (max-width: $breakpoint768){
+         max-width: 100%;
+      }
+   }
+}
+.subscribe-form {
+
+   // .subscribe-form__title
+   &__title {
+      @include adaptiveValue('font-size',30,25);
+      
+     
+   }
+
+   // .subscribe-form__form
+   &__form {
+      display:flex;
+      gap: rem(15);
+      
+      @media (max-width: $breakpoint480){
+         flex-direction: column;
+         width: 100%;
+      }
+   }
+
+   // .subscribe-form__input
+   &__input {
+      border: 1px solid var(--text-co);
+      @include adaptiveValue('padding',10,8);
+      border-radius: rem(10);
+     
+      
+   }
+
+   // .subscribe-form__submit
+   &__submit {
+      background-color: var(--black-co);
+      color: var(--white-co);
+      padding: rem(10) rem(15);
+      border-radius: rem(10);
+      border: 1px solid transparent;
+      transition: all .3s ease;
+      @media (any-hover: hover) {
+         
+         &:hover {
+            background-color: var(--white-co);
+            color: var(--black-co);
+      border: 1px solid var(--black-co);
+
+         }
+      }
+   }
+}
+
