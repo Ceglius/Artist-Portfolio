@@ -7,13 +7,14 @@
 
 .page {
    
-  @include adaptiveValue("padding-top", 108, 80);
+  @include adaptiveValue("padding-top", 108, 71);
   &__hero,
   &__latest,
   &__latest-blogs,
   &__quote,
   &__testimonials,
-  &__subscribe  {
+  &__subscribe,
+  &__about  {
     @include adaptiveValue("padding-bottom", 140, 80);
   }
 }

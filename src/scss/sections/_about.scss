@@ -1,0 +1,66 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+
+/*
+   ==== About ====
+*/
+
+.about {
+  // .about__grid
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 70vh;
+    @include adaptiveValue("gap", 30, 20);
+
+    @media (max-width: $breakpoint992) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 50vh;
+    }
+  }
+
+  // .about__images
+  &__images {
+    @media (max-width: $breakpoint992) {
+      grid-row: span 2 / 4;
+    }
+    position: relative;
+    img {
+      object-fit: cover;
+      object-position: top;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  // .about__content
+
+  &__content {
+    @include flex-column($gap: 0);
+    justify-content: center;
+    color: var(--text-co);
+    line-height: 150%;
+    padding-right: rem(15);
+    @media (max-width: $breakpoint992) {
+      padding-left: rem(15);
+    }
+  }
+
+  // .about__title
+
+  &__title {
+    @include adaptiveValue("font-size", 48, 30);
+    margin-bottom: calc(20 / 48 * 1em);
+    color: var(--heading-co);
+  }
+
+  // .about__text
+
+  &__text {
+    @include adaptiveValue("font-size", 18, 16);
+  }
+}
