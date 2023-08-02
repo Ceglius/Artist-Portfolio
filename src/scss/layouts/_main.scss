@@ -9,7 +9,8 @@
    @include adaptiveValue('padding-top',108,70);
   // .page__hero
   &__hero,
-  &__latest {
+  &__latest,
+  &__latest-blogs {
    @include adaptiveValue('padding-bottom',140,80);
   }
 }

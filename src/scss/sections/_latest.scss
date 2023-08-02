@@ -27,11 +27,21 @@
     // .latest__card
     &__card {
         
+
     }
 
     // .latest__link
     &__link {
-        
+        display: block;
+        transform: scale(1);
+        transition: all .3s ease;
+
+        @media (any-hover: hover) {
+            
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
     }
 
     // .latest__img

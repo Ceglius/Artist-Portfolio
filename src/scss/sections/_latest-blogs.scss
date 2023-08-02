@@ -1,0 +1,73 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+
+/*
+   ==== Latest Blogs====
+*/
+
+.latest-blogs {
+
+    // .latest-blogs__container
+    &__container {
+    }
+
+    // .latest-blogs__content
+    &__content {
+    }
+
+    // .latest-blogs__list
+    &__list {
+
+    }
+}
+
+.latest-blog {
+    @include flex-column($gap:50);
+    // .latest-blog__car
+    &__card {
+        display: grid;
+        grid-template-columns: 40% 1fr;
+        @include adaptiveValue('gap',30,20);
+
+        @media (max-width: $breakpoint560){
+        grid-template-columns: 1fr;
+
+        }
+    }
+
+    // .latest-blog__img
+    &__img {
+        padding-bottom: 62%;
+
+    }
+
+    // .latest-blog__body
+    &__body {
+        @include flex-column($gap:0);
+        justify-content: center;
+    }
+
+    // .latest-blog__title
+    &__title {
+        @include adaptiveValue('font-size',30,24);
+        font-weight: var(--fw-semi-bold);
+        letter-spacing: 1px;
+        margin-bottom: calc(10 / 30 * 1em);
+        color: var(--heading-co);
+    }
+
+    // .latest-blog__text
+    &__text {
+        color: var(--text-co);
+        line-height: 120%;
+        @include adaptiveValue('font-size',18,16);
+    }
+
+    // .latest-blog__date
+    &__date {
+        margin-top: calc( 15 / 30 * 1em);
+        color: var(--black-co);
+        @include adaptiveValue('font-size',20,18);
+
+    }
+}
