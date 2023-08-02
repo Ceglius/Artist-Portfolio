@@ -6,58 +6,59 @@
 */
 
 .header {
-  padding-top: rem(15);
+  padding: rem(15) 0;
   // background-color: var(--text-co);
   @include flex-center();
 
   // .header__container
   &__container {
     display: grid;
-    grid-template-columns: 45% 20% 35%;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     justify-content: space-between;
     @include adaptiveValue("gap", 20, 10);
-
-    @media (max-width: $breakpoint768) {
-      grid-template-columns: auto 1fr auto;
-    }
   }
 
   // .header__menu
   &__menu {
-   
   }
 
   // .header__logo
   &__logo {
     border: 4px solid;
+    order: -1;
 
-
-    @media (max-width: $breakpoint992){
-        border: 3px solid;
+    @media (max-width: $breakpoint992) {
+      border: 3px solid;
     }
-    @media (max-width: $breakpoint768){
-        border: 2px solid;
+    @media (max-width: $breakpoint768) {
+      border: 2px solid;
     }
 
     a {
       display: block;
-      padding: rem(15) rem(30);
-      @include adaptiveValue("font-size", 48, 20);
+      @include adaptiveValue("font-size", 40, 20);
       @include adaptiveValue("padding-top", 15, 8);
       @include adaptiveValue("padding-bottom", 15, 8);
-      @include adaptiveValue("padding-left", 30, 18);
-      @include adaptiveValue("padding-right", 30, 18);
+      @include adaptiveValue("padding-left", 25, 18);
+      @include adaptiveValue("padding-right", 25, 18);
       font-weight: var(--fw-medium);
       letter-spacing: 2px;
       text-align: center;
       color: var(--black-co);
+      transition: background-color 0.3s ease, color 0.5s;
+
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: var(--black-co);
+          color: var(--white-co);
+        }
+      }
     }
   }
 
   // .header__socials
   &__socials {
-   
     @media (max-width: $breakpoint768) {
       // margin-right: auto;
     }
@@ -71,8 +72,9 @@
   // .menu__list
   &__list {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    @include adaptiveValue("gap", 20, 10);
+    @include adaptiveValue("gap", 30, 10);
   }
 
   // .menu__item
@@ -83,28 +85,26 @@
   &__link {
     display: inline-block;
     color: var(--black-co);
-    @include adaptiveValue("font-size", 20, 18);
+    @include adaptiveValue("font-size", 22, 18);
     position: relative;
     padding-bottom: rem(3);
     &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    width: 0;
-    background-color: var(--black-co);
-    transition: width 0.3s;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background-color: var(--black-co);
+      transition: width 0.3s;
     }
 
     @media (any-hover: hover) {
-        
-        &:hover {
-            &:after{
-                width: 100%;
-            }
-            
+      &:hover {
+        &:after {
+          width: 100%;
         }
+      }
     }
   }
 }
@@ -113,13 +113,12 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    @include adaptiveValue("gap", 20, 10);
-    justify-content: space-evenly;
+    @include adaptiveValue("gap", 20, 15);
+    justify-content: center;
+
     @media (min-width: $breakpoint768) {
       justify-content: flex-end;
     }
-
-
   }
 
   // .socials__item
@@ -130,5 +129,13 @@
   &__link {
     @include adaptiveValue("font-size", 24, 18);
     color: var(--black-co);
+    display: block;
+    transition: all .3s ease;
+    @media (any-hover: hover) {
+      
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
   }
 }
