@@ -1,0 +1,65 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+
+/*
+   ==== latest ====
+*/
+
+
+.latest {
+
+    // .latest__container
+    &__container {
+    }
+
+    // .latest__content
+    &__content {
+    }
+    // .latest__wrapper
+    &__wrapper {
+        
+    }
+    // .latest__list
+    &__list {
+        overflow: visible;
+    }
+
+    // .latest__card
+    &__card {
+        
+    }
+
+    // .latest__link
+    &__link {
+        
+    }
+
+    // .latest__img
+    &__img {
+        padding-bottom: calc(340 / 480 * 100%);
+        // @include adaptiveValue('padding-bottom',240,150,);
+    }   
+
+    // .latest__img--ibg
+    &__img--ibg {
+    }
+
+    // .latest__body
+    &__body {
+        margin-top: rem(10);
+        @include flex-sb-center($gap:0);
+        padding: 0 rem(10);
+    }
+
+    // .latest__title
+    &__title {
+        @include adaptiveValue('font-size',22,16);
+        color: var(--heading-co);
+    }
+
+    // .latest__date
+    &__date {
+        @include adaptiveValue('font-size',20,14);
+        color: var(--heading-co);
+    }
+}

@@ -29,10 +29,38 @@
 
 
 .hero-title {
-	@include adaptiveValue('font-size',45,24);
+	@include adaptiveValue('font-size',55,24);
 	font-weight: var(--fw-bold);
 	color: var(--white-co);
 	letter-spacing: 2px;
 	line-height: 0.7;
+}
+
+.section-text {
+	@include flex-sb-center($gap:0);
+	@include adaptiveValue('margin-bottom',30,20);
+}
+.sectiont-title {
+	@include adaptiveValue('font-size',45,30);
+	color: var(--heading-co);
+	
+	font-weight: var(--fw-semi-bold);
+	letter-spacing: 2px;
+}
+.section-link {
+	@include adaptiveValue('font-size',24,18);
+	color: var(--heading-co);
+	border: 1px solid;
+	padding: rem(5) rem(10);
+	background-color: transparent;
+	transition: all 0.3s ease;
+	@media (any-hover: hover) {
+		
+		&:hover {
+	background-color: black;
+	color: var(--white-co);
+		}
+	}
+	
 }
 
