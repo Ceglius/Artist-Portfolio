@@ -1,0 +1,27 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+
+/*
+   ==== Slider ====
+*/
+
+.slider {
+  // .slider__wrapper
+  &__wrapper {
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+  }
+
+  // .slider__slide
+  &__slide {
+    width: auto !important;
+    @include adaptiveValue("height", 500, 200);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

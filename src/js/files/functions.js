@@ -33,16 +33,17 @@ export function removeClasses(array, className) {
 
 export function placeholder(type, placeholder) {
   const input = document.querySelector(`input[type="${type}"]`);
+  if (input) {
+    input.addEventListener("focus", function() {
+      this.removeAttribute("placeholder");
+    });
 
-  input.addEventListener("focus", function() {
-    this.removeAttribute("placeholder");
-  });
-
-  input.addEventListener("blur", function() {
-    if (!this.value) {
-      this.setAttribute("placeholder", `${placeholder}`);
-    }
-  });
+    input.addEventListener("blur", function() {
+      if (!this.value) {
+        this.setAttribute("placeholder", `${placeholder}`);
+      }
+    });
+  }
 }
 
 export function menuInit() {
@@ -63,21 +64,20 @@ export function menuInit() {
 export function hideHeader() {
   let prevScrollPos = window.scrollY;
 
-function handleScroll() {
-  const currentScrollPos = window.scrollY;
-  const header = document.querySelector(".header");
+  function handleScroll() {
+    const currentScrollPos = window.scrollY;
+    const header = document.querySelector(".header");
 
-  if (prevScrollPos > currentScrollPos) {
-    header.classList.add("_visible");
-    header.classList.remove("_hidden");
-  } else {
-    header.classList.add("_hidden");
-    header.classList.remove("_visible");
+    if (prevScrollPos > currentScrollPos) {
+      header.classList.add("_visible");
+      header.classList.remove("_hidden");
+    } else {
+      header.classList.add("_hidden");
+      header.classList.remove("_visible");
+    }
+
+    prevScrollPos = currentScrollPos;
   }
 
-  prevScrollPos = currentScrollPos;
+  window.addEventListener("scroll", handleScroll);
 }
-
-window.addEventListener("scroll", handleScroll);
-}
-
