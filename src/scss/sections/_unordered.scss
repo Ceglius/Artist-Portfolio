@@ -14,7 +14,7 @@
 
   &__list {
     @include flex-column($gap: 0);
-    @include adaptiveValue("gap", 40, 20);
+    @include adaptiveValue("gap", 50, 30);
   }
 
   // .ul__item
@@ -36,15 +36,44 @@
 
   // .item__list
   &__list {
-    @include flex-column($gap:10);
+    @include flex-column($gap: 10);
   }
 
   // .item__bullet
 
   &__bullet {
-    @include adaptiveValue('font-size',20,18);
-    color:var(--text-co);
+    @include adaptiveValue("font-size", 20, 18);
+    color: var(--text-co);
     font-weight: var(--fw-slim);
     line-height: 150%;
-}
+
+    > a {
+      @include adaptiveValue("font-size", 20, 18);
+      color: var(--text-co);
+      font-weight: var(--fw-slim);
+      line-height: 150%;
+      display: flex;
+      align-items: center;
+      @include adaptiveValue("gap", 15, 10);
+      transition: all 0.3s ease;
+      @media (any-hover: hover) {
+        &:hover {
+          //  transform: translateY(5px);
+          //  color: red;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    i {
+      align-self: flex-start;
+      
+
+      @include adaptiveValue("font-size", 35, 25);
+
+      &:before {
+        line-height: 0;
+      }
+    }
+  }
 }

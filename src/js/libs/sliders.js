@@ -77,7 +77,7 @@ function initSliders() {
       
       spaceBetween: 30,
       observer: true,
-      speed: 10000,
+      speed:  40000,
       autoplay: {
         delay: 0,
       },
