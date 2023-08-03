@@ -1,0 +1,50 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+
+/*
+   ==== Unordered ====
+*/
+
+.ul {
+  // .ul__container
+  &__container {
+  }
+
+  // .ul__list
+
+  &__list {
+    @include flex-column($gap: 0);
+    @include adaptiveValue("gap", 40, 20);
+  }
+
+  // .ul__item
+
+  &__item {
+  }
+}
+.item {
+  // .item__title
+
+  &__title {
+    @include adaptiveValue("font-size", 30, 25);
+    border-top: 1px solid #949494;
+    padding-top: 10px;
+    &:not(:last-child) {
+      margin-bottom: calc(20 / 30 * 1em);
+    }
+  }
+
+  // .item__list
+  &__list {
+    @include flex-column($gap:10);
+  }
+
+  // .item__bullet
+
+  &__bullet {
+    @include adaptiveValue('font-size',20,18);
+    color:var(--text-co);
+    font-weight: var(--fw-slim);
+    line-height: 150%;
+}
+}

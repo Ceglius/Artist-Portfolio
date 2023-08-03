@@ -15,7 +15,8 @@
   &__testimonials,
   &__subscribe,
   &__text,
-  &__slider  {
+  &__slider,
+  &__ul  {
     @include adaptiveValue("padding-bottom", 140, 80);
   }
 }
