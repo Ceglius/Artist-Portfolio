@@ -16,8 +16,11 @@ window.addEventListener("load", function (e) {
         }
     });
   }
+  const pageMainConten = document.querySelector('.page');
+  const firstChild = pageMainConten.firstElementChild.classList;
+  if (firstChild.contains("page__hero")) return
+  else firstChild.add("section-padding-top") 
 
-  
 })
 
 

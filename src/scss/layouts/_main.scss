@@ -18,7 +18,8 @@
   &__slider,
   &__ul,
   &__contact,
-  &__blog  {
+  &__blog,
+  &__content  {
     @include adaptiveValue("padding-bottom", 140, 80);
   }
 }

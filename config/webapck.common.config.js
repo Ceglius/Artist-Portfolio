@@ -98,8 +98,17 @@ const config = {
     }),
 
     new HtmlWebpackPlugin({
-      filename: "blog.html",
+      filename: "blogs.html",
       template: path.join(__dirname, "../src/views/pages/blog.hbs"),
+      minify: {
+        collapseWhitespace: false,
+        removeComments: false,
+      },
+      inject: true,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "blog-page.html",
+      template: path.join(__dirname, "../src/views/pages/blog-page.hbs"),
       minify: {
         collapseWhitespace: false,
         removeComments: false,
