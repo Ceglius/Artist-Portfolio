@@ -28,7 +28,8 @@
   &__title {
     @include adaptiveValue("font-size", 30, 25);
     border-top: 1px solid #949494;
-    padding-top: 10px;
+    letter-spacing: 1px;
+    padding-top: rem(10);
     &:not(:last-child) {
       margin-bottom: calc(20 / 30 * 1em);
     }

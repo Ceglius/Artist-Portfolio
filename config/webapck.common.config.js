@@ -96,6 +96,16 @@ const config = {
       },
       inject: true,
     }),
+
+    new HtmlWebpackPlugin({
+      filename: "blog.html",
+      template: path.join(__dirname, "../src/views/pages/blog.hbs"),
+      minify: {
+        collapseWhitespace: false,
+        removeComments: false,
+      },
+      inject: true,
+    }),
     new BeautifyHtmlWebpackPlugin(),
 
     new CopyPlugin({

@@ -31,19 +31,30 @@ export function removeClasses(array, className) {
   }
 }
 
-export function placeholder(type, placeholder) {
-  const input = document.querySelector(`input[type="${type}"]`);
-  if (input) {
-    input.addEventListener("focus", function() {
-      this.removeAttribute("placeholder");
-    });
+export function placeholder() {
+  const input = document.querySelectorAll(`input`);
+  input.forEach((el) => {
+    if (el && el.hasAttribute("placeholder")) {
+      console.log(el);
+      const value = el.getAttribute("placeholder");
 
-    input.addEventListener("blur", function() {
-      if (!this.value) {
-        this.setAttribute("placeholder", `${placeholder}`);
-      }
-    });
-  }
+      el.addEventListener("focus", function() {
+        this.removeAttribute("placeholder");
+      });
+
+      el.addEventListener("blur", function() {
+        if (!this.value) {
+          this.setAttribute("placeholder", value);
+        }
+      });
+
+      el.addEventListener("input", function() {
+        if (!this.value) {
+          this.setAttribute("placeholder", value);
+        }
+      });
+    }
+  });
 }
 
 export function menuInit() {

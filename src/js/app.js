@@ -1,7 +1,8 @@
 import * as flsFunctions from "./files/functions.js";
 flsFunctions.menuInit()
 flsFunctions.hideHeader()
-flsFunctions.placeholder("email", "Enter your email")
+flsFunctions.placeholder()
+
 import "./libs/light-gallery.js"
 import "./libs/sliders.js"
 

@@ -47,12 +47,13 @@
   letter-spacing: 2px;
 }
 .section-link {
-  @include adaptiveValue("font-size", 24, 18);
+  @include adaptiveValue("font-size", 24, 20);
   color: var(--heading-co);
   border: 1px solid;
-  padding: rem(5) rem(10);
+  padding: rem(8) rem(18);
   background-color: transparent;
   transition: all 0.3s ease;
+
   @media (any-hover: hover) {
     &:hover {
       background-color: black;

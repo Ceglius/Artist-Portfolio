@@ -1,0 +1,237 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+
+/*
+   ==== Blog ====
+*/
+
+.blog {
+  // .blog__container
+
+  &__container {
+  }
+
+  // .blog__wrapper
+  &__wrapper {
+  }
+
+  // .blog__form
+  &__form {
+    margin-left: 10%;
+    @media (max-width: $breakpoint992) {
+      margin-left: 0;
+    }
+  }
+
+  // .blog__list
+  &__list {
+    @include flex-column($gap: 30);
+    align-items: center;
+  }
+
+  // .blog__card
+  &__card {
+  }
+}
+
+.form-blog {
+  // .form-blog__form
+  max-width: rem(400);
+  @include adaptiveValue("padding-bottom", 60, 40);
+  &__form {
+    border: 1px solid;
+    display: flex;
+  }
+
+  // .form-blog__input
+
+  &__input {
+    width: 100%;
+    padding: rem(10) rem(10);
+    background-color: var(--white-co);
+  }
+
+  // .form-blog__btn
+
+  &__btn {
+    @include square(50);
+    background-color: var(--black-co);
+
+    i {
+      color: var(--white-co);
+    }
+  }
+}
+.card-blog {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  overflow: hidden;
+  z-index: 0;
+
+  @media (max-width: $breakpoint992) {
+    max-width: 100%;
+  }
+
+  p {
+    position: relative;
+    margin: 1rem 0 0;
+    color: var(--text-co);
+    font-weight: var(--fw-slim);
+    line-height: 120%;
+    @include adaptiveValue("font-size", 18, 18);
+
+    &:first-of-type {
+      margin-top: 1.25rem;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 3px;
+        background: #000;
+        width: 75px;
+        top: -1rem;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  &:hover .details {
+    left: 0%;
+  }
+
+  &:hover .card-blog__img > img {
+    @media (min-width: $breakpoint992) {
+      -webkit-transform: scale(1.15) rotate(2deg);
+      transform: scale(1.15) rotate(2deg);
+    }
+  }
+
+  @media (min-width: $breakpoint768) {
+    flex-direction: row;
+    &.alt {
+      flex-direction: row-reverse;
+
+      .card-blog__body:before {
+        left: inherit;
+        right: -10px;
+        -webkit-transform: skew(3deg);
+        transform: skew(3deg);
+      }
+      .card-blog__link {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  // .card-blog__img
+
+  &__img {
+    position: relative;
+    z-index: 0;
+    height: 200px;
+
+    @media (max-width: $breakpoint768) {
+      @include adaptiveValue("height", 400, 250);
+    }
+
+    @media (min-width: $breakpoint768) {
+      flex-basis: 40%;
+      height: auto;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: -webkit-transform 0.2s;
+      transition: transform 0.2s;
+      transition: transform 0.2s, -webkit-transform 0.2s;
+    }
+    @media (max-width: $breakpoint768) {
+    }
+  }
+
+  // .card-blog__body
+  &__body {
+    padding: 1rem;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: $breakpoint768) {
+      flex-basis: 60%;
+
+      &:before {
+        -webkit-transform: skewX(-3deg);
+        transform: skewX(-3deg);
+        content: "";
+        background: #fff;
+        width: 30px;
+        position: absolute;
+        left: -10px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
+
+    h1 {
+      line-height: 1;
+      @include adaptiveValue("font-size", 35, 28);
+      margin-bottom: calc(20 / 40 * 1em);
+    }
+
+    h2 {
+      @include adaptiveValue("font-size", 20, 18);
+      font-weight: 300;
+      text-transform: uppercase;
+      color: #a2a2a2;
+      margin-top: 5px;
+    }
+
+    .card-blog__link {
+      @include flex-sb-center($gap: 15);
+      flex-wrap: wrap;
+      @media (max-width: $breakpoint480) {
+        flex-direction: column;
+
+        span {
+        align-self: flex-end;
+        }
+      }
+
+      a {
+        color: #000;
+        font-size: rem(20);
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        background: var(--white-co);
+        padding: rem(8) rem(18);
+        border: 1px solid;
+        transition: all 0.3s ease;
+
+        @media (max-width: $breakpoint480){
+          width: 100%;
+          text-align: center;
+        }
+
+        @media (any-hover: hover) {
+          &:hover {
+            background: var(--black-co);
+            color: var(--white-co);
+          }
+        }
+      }
+    }
+  }
+
+}

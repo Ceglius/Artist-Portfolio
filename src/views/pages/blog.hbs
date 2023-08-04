@@ -1,5 +1,96 @@
-{{#>  ../layouts/layout-main title="About"}}
-     <!-- Hero -->
-    {{#> ../page-blocks/_hero}}
-    {{/../page-blocks/_hero}} 
+{{#> ../layouts/layout-main title="Blog"}}
+    <!-- Hero -->
+    {{#> ../page-blocks/_hero img="blog"}}
+    {{/../page-blocks/_hero}}
+
+    <!-- Blogs List -->
+    <div class="page__blog blog">
+        <div class="blog__container">
+            <div class="blog__wrapper">
+                <div class="blog__form form-blog">
+                    <form class="form-blog__form" action="#" method="GET">
+
+                        <input class="form-blog__input" type="search" id="search" name="search" placeholder="Search for blog title">
+                        <button class="form-blog__btn" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+                </div>
+                <div class="blog__list">
+                    <div class="blog__card card-blog">
+
+                        <div class="card-blog__img">
+                            <img src="@img/blog/01.jpg" alt="">
+                        </div>
+
+                        <div class="card-blog__body">
+                            <h1>Learning to Code</h1>
+                            <h2>Opening a door to the future</h2>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac mattis mi. Lorem ipsum
+                                dolor sit
+                                amet, consectetur adipiscing elit. Maecenas sollicitudin semper nisi, vestibulum egestas
+                                mauris.</p>
+                            <p class="card-blog__link">
+                                <span>20.07.2023</span>
+                                <a href="#">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blog__card card-blog ">
+                        <div class="card-blog__img">
+                            <img src="@img/blog/02.jpg" alt="">
+                        </div>
+                        <div class="card-blog__body">
+                            <h1>Learning to Code</h1>
+                            <h2>Opening a door to the future</h2>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac mattis mi. Lorem ipsum
+                                dolor sit
+                                amet, consectetur adipiscing elit. Maecenas sollicitudin semper nisi, vestibulum egestas
+                                mauris.</p>
+                            <p class="card-blog__link">
+                                <span>20.07.2023</span>
+                                <a href="#">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blog__card card-blog">
+                        <div class="card-blog__img">
+                            <img src="@img/blog/03.jpg" alt="">
+                        </div>
+                        <div class="card-blog__body">
+                            <h1>Learning to Code</h1>
+                            <h2>Opening a door to the future</h2>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac mattis mi. Lorem ipsum
+                                dolor sit
+                                amet, consectetur adipiscing elit. Maecenas sollicitudin semper nisi, vestibulum egestas
+                                mauris.</p>
+                            <p class="card-blog__link">
+                                <span>20.07.2023</span>
+                                <a href="#">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blog__card card-blog">
+                        <div class="card-blog__img">
+                            <img src="@img/blog/04.jpg" alt="">
+                        </div>
+                        <div class="card-blog__body">
+                            <h1>Learning to Code</h1>
+                            <h2>Opening a door to the future</h2>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac mattis mi. Lorem ipsum
+                                dolor sit
+                                amet, consectetur adipiscing elit. Maecenas sollicitudin semper nisi, vestibulum egestas
+                                mauris. </p>
+                            <p class="card-blog__link">
+                                <span>20.07.2023</span>
+                                <a href="#">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Subscribe -->
+    {{#> ../page-blocks/_subscribe}}
+    {{/../page-blocks/_subscribe}}
 {{/../layouts/layout-main }}
