@@ -24,5 +24,9 @@ window.addEventListener("load", function (e) {
 })
 
 
+// galery filters
+
+
+
 
 

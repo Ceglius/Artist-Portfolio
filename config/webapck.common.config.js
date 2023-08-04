@@ -115,6 +115,15 @@ const config = {
       },
       inject: true,
     }),
+    new HtmlWebpackPlugin({
+      filename: "gallery.html",
+      template: path.join(__dirname, "../src/views/pages/gallery.hbs"),
+      minify: {
+        collapseWhitespace: false,
+        removeComments: false,
+      },
+      inject: true,
+    }),
     new BeautifyHtmlWebpackPlugin(),
 
     new CopyPlugin({

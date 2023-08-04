@@ -19,7 +19,8 @@
   &__ul,
   &__contact,
   &__blog,
-  &__content  {
+  &__content,
+  &__gallery   {
     @include adaptiveValue("padding-bottom", 140, 80);
   }
 }

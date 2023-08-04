@@ -35,9 +35,21 @@ function initLightGallery() {
         loop: true,
         plugins: [lgThumbnail],
         licenseKey: "7EC452A9-0CFD441C-BD984C7C-17C8456E",
-        selector: '.swiper-slide:not(.swiper-slide-duplicate)',
+        selector: 'a',
       });
   }
+
+  if (document.querySelector("[data-gallery-main]")) {
+   
+    lightGallery(document.querySelector("[data-gallery-main]"), {
+      licenseKey: "your_license_key",
+      speed: 500,
+      loop: true,
+      plugins: [lgThumbnail],
+      licenseKey: "7EC452A9-0CFD441C-BD984C7C-17C8456E",
+      selector: '.card-gallery__thumbnail',
+    });
+}
 }
 initLightGallery()
 

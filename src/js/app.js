@@ -7,3 +7,4 @@ import "./libs/light-gallery.js"
 import "./libs/sliders.js"
 
 import './files/scripts.js'
+
