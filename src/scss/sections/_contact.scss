@@ -27,6 +27,10 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       
+      &:only-child {
+         grid-template-columns: 1fr;
+         justify-content: center
+      }
       @include adaptiveValue('gap',30,20);
 
       @media (max-width: $breakpoint768){
@@ -51,6 +55,22 @@
    height: 100%;
    padding: rem(20) 0;
    
+   &__group {
+      position: relative;
+      @include adaptiveValue('margin-bottom',10,8);
+
+      span {
+         position: absolute;
+         top: 1px;
+         display: block;
+         right: 0;
+         color: rgb(216, 40, 40);
+         width: 100%;
+         text-align: right;
+         
+      }
+
+   }
    // .form-contact__form
 
    &__form {
@@ -63,6 +83,9 @@
    &__label {
       width: 100%;
       @include adaptiveValue('font-size',25,20);
+      @include adaptiveValue('margin-bottom',20,15);
+
+      display: block;
    }
 
    // .form-contact__input

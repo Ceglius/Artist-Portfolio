@@ -183,13 +183,13 @@
       }
     }
 
-    h1 {
+    h2 {
       line-height: 1;
       @include adaptiveValue("font-size", 35, 28);
       margin-bottom: calc(20 / 40 * 1em);
     }
 
-    h2 {
+    h3 {
       @include adaptiveValue("font-size", 20, 18);
       font-weight: 300;
       text-transform: uppercase;

@@ -33,6 +33,13 @@ module.exports = merge(common, {
           priority: 10,
           enforce: true,
         },
+        libs: {
+          test: /[\\/]libs[\\/]/,
+          name: "vendors",
+          chunks: "initial",
+          priority: 10,
+          enforce: true,
+        },
       },
     },
     minimize: true,

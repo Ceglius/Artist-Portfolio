@@ -11,15 +11,23 @@
             </div>
             <div class="contact__form form-contact">
                 <form class="form-contact__form" action="#" method="POST">
-                    <label class="form-contact__label" id="name">Name:</label>
-                    <input class="form-contact__input" type="text" id="name" name="name" required>
+                    <div class="form-contact__group">
+                        <label class="form-contact__label" id="name">Name:</label>
+                        <input class="form-contact__input" type="text" id="name" name="name" required>
+                        <span class="field-validation-error">Please enter your name</span>
+                    </div>
+                    <div class="form-contact__group">
+                        <label class="form-contact__label" for="email">Email:</label>
+                        <input class="form-contact__input" type="email" id="email" name="email" required>
+                        <span class="field-validation-error">The Email field is required.</span>
 
-                    <label class="form-contact__label" for="email">Email:</label>
-                    <input class="form-contact__input" type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-contact__group">
+                        <label class="form-contact__label" for="message">Message:</label>
+                        <textarea class="form-contact__input" id="message" name="message" rows="4" required></textarea>
+                        <span class="field-validation-error">Please enter your name</span>
 
-                    <label class="form-contact__label" for="message">Message:</label>
-                    <textarea class="form-contact__input" id="message" name="message" rows="4" required></textarea>
-
+                    </div>
                     <button class="form-contact__btn" type="submit">Send Message</button>
                 </form>
             </div>

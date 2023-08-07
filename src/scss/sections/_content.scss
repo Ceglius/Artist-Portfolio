@@ -17,51 +17,64 @@
   &__body {
     max-width: rem(1000);
     margin: 0 auto;
+
+    img {
+      max-width: 100%; 
+      height: auto;
+    }
   }
 
   // .content__title
 
   &__title {
     @include adaptiveValue("font-size", 55, 45);
-    margin-bottom: calc(25 / 55 * 1em);
+    @include adaptiveValue('margin-bottom',30,25);
 
     &--2 {
       @include adaptiveValue("font-size", 45, 35);
 
-      margin-bottom: calc(20 / 45 * 1em);
+      @include adaptiveValue('margin-bottom',25,20);
     }
 
     &--3 {
       @include adaptiveValue("font-size", 40, 30);
-      margin-bottom: calc(15 / 40 * 1em);
+      @include adaptiveValue('margin-bottom',20,17);
     }
     &--4 {
       @include adaptiveValue("font-size", 35, 30);
-      margin-bottom: calc(10 / 35 * 1em);
+      @include adaptiveValue('margin-bottom',17,14);
+
     }
   }
 
-  // .content__paragrpah
+  // .content__paragraph
 
-  &__paragrpah {
+  &__paragraph {
     @include adaptiveValue("font-size", 30, 25);
     line-height: 130%;
-    margin-bottom: calc(25 / 20 * 1em);
+    @include adaptiveValue('margin-bottom',25,20);
     font-weight: var(--fw-slim);
 
     &--medium {
         @include adaptiveValue("font-size", 25, 20);
-        margin-bottom: calc(20 / 16 * 1em);
+       
+        @include adaptiveValue('margin-bottom',23,18);
+        line-height: 130%;
+        font-weight: var(--fw-slim);
       }
 
-    &--medium-semi {
+    &--semi-medium {
         @include adaptiveValue("font-size", 20, 16);
-        margin-bottom: calc(20 / 16 * 1em);
+        @include adaptiveValue('margin-bottom',20,15);
+        line-height: 130%;
+        font-weight: var(--fw-slim);
        
       }
     &--small {
         @include adaptiveValue("font-size", 16, 14);
-        margin-bottom: calc(15 / 16 * 1em);
+        @include adaptiveValue('margin-bottom',18,13);
+        line-height: 130%;
+        font-weight: var(--fw-slim);
        
       }
 
