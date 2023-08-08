@@ -21,6 +21,8 @@
   &__nav {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    row-gap: rem(10);
     @include adaptiveValue("margin-bottom", 30, 20);
 
     div {
@@ -44,20 +46,21 @@
   // .gallery__grid
 
   &__grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    @include adaptiveValue("gap", 30, 20);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    @include adaptiveValue('gap',30,15);
+
     @media (max-width: $breakpoint768) {
+           grid-template-columns: 1fr 1fr;
     }
   }
 
   // .gallery__card
 
   &__card {
-    flex: 1 1 rem(390);
-    align-self: flex-start;
+    // flex: 1 1 rem(390);
+    // align-self: flex-start;
 
     &:last-child {
       

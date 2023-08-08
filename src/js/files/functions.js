@@ -35,7 +35,6 @@ export function placeholder() {
   const input = document.querySelectorAll(`input`);
   input.forEach((el) => {
     if (el && el.hasAttribute("placeholder")) {
-      console.log(el);
       const value = el.getAttribute("placeholder");
 
       el.addEventListener("focus", function() {

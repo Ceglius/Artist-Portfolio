@@ -1,4 +1,5 @@
 import * as flsFunctions from "./functions.js";
+
 // window.addEventListener("click", function (e) {
 //   function documentActions(e) {
 //     const targetElement = e.target;
@@ -6,7 +7,15 @@ import * as flsFunctions from "./functions.js";
 // })
 
 window.addEventListener("load", function(e) {
-  const blogCards = this.document.querySelectorAll(".card-blog");
+
+  autoPaddingTop()
+  galleryNav();
+  blogCardReverse();
+  blogsSearch()
+});
+
+function blogCardReverse() {
+  const blogCards = document.querySelectorAll(".card-blog");
   if (blogCards) {
     blogCards.forEach((el, i) => {
       if (i % 2 !== 0) {
@@ -14,48 +23,75 @@ window.addEventListener("load", function(e) {
       }
     });
   }
-  const pageMainConten = document.querySelector(".umb-block-list");
+}
 
-  if (pageMainConten) {
-    const firstChild = pageMainConten.firstElementChild.classList;
-    if (firstChild.contains("page__hero")) return;
-    else firstChild.add("section-padding-top");
+function galleryNav() {
+  const galleryNav = document.querySelectorAll(".gallery__nav div");
+  const allImages = document.querySelectorAll(".gallery__card");
+
+  if (galleryNav) {
+    galleryNav.forEach((el, _i, arr) => {
+      el.addEventListener("click", function() {
+        const idGroup = el.getAttribute("data-group");
+    
+        flsFunctions.removeClasses(arr, "active");
+        el.classList.add("active");
+        showImagesByGroup(idGroup);
+      });
+    });
   }
 
-  galleryNavigation()
-});
+  function showImagesByGroup(dataValue) {
+    if (dataValue === "All") {
+      allImages.forEach((element) => {
+        element.style.display = "block";
+      });
+    } else {
+      const array = document.querySelectorAll(`[data-group="${dataValue}"]`);
+      allImages.forEach((element) => {
+        element.style.display = "none";
 
-
-function galleryNavigation() {
-  const galleryNav = document.querySelectorAll('.gallery__nav div');
-const allImages = document.querySelectorAll(".gallery__card");
-
-if (galleryNav) {
-
-  galleryNav.forEach((el, _i, arr) => {
-
-    el.addEventListener("click", function () {
-      console.log(el.dataset.group);
-      const idGroup = el.getAttribute("data-group");
-
-        flsFunctions.removeClasses(arr, "active")
-        el.classList.add("active")
-        showImagesByGroup(idGroup)
-      })
-    })
+        array.forEach((element) => {
+          element.style.display = "block";
+        });
+      });
+    }
+  }
 }
 
-function showImagesByGroup(dataValue) {
-  const array = document.querySelectorAll(`[data-group=${dataValue}]`)
- 
-   
-    allImages.forEach(element => {
-      element.style.display = 'none';
-    });
+function autoPaddingTop() {
+  const pageMainContent = document.querySelector(".umb-block-list");
+  const page = document.querySelector(".page");
+
+  if (
+    page.firstElementChild.classList.contains("umb-block-list") &&
+    pageMainContent.childElementCount !== 0
+  ) {
+    const firstChild = pageMainContent.firstElementChild;
+    if (firstChild.classList.contains("page__hero")) return;
+    else firstChild.classList.add("section-padding-top");
+  } else {
+    const firstChild = page.firstElementChild;
+    if (firstChild.classList.contains("page__hero")) return;
+    else firstChild.classList.add("section-padding-top");
+  }
+}
+
+
+function blogsSearch() {
+  const blogForm = document.querySelector('.form-blog');
+  const blogFormInput = document.querySelector('.form-blog__input');
+  const blogsTitles = document.querySelectorAll(".card-blog__body h2");
   
+  blogForm.addEventListener("keyup", () => {
+    const inputValue = blogFormInput.value.toLowerCase();
     
-    array.forEach(element => {
-      element.style.display = 'block';
+    blogsTitles.forEach(title => {
+      const card = title.closest(".card-blog");
+      if (title.textContent.toLowerCase().includes(inputValue)) {
+        card.style.display = "flex"; // Show card if title matches input
+        card.style.display = "none"; 
+      }
     });
-}
+  })
 }
