@@ -83,15 +83,19 @@ function blogsSearch() {
   const blogFormInput = document.querySelector('.form-blog__input');
   const blogsTitles = document.querySelectorAll(".card-blog__body h2");
   
-  blogForm.addEventListener("keyup", () => {
-    const inputValue = blogFormInput.value.toLowerCase();
-    
-    blogsTitles.forEach(title => {
-      const card = title.closest(".card-blog");
-      if (title.textContent.toLowerCase().includes(inputValue)) {
-        card.style.display = "flex"; // Show card if title matches input
-        card.style.display = "none"; 
-      }
-    });
-  })
+  if (blogForm) {
+    blogForm.addEventListener("keyup", () => {
+      const inputValue = blogFormInput.value.toLowerCase();
+      
+      blogsTitles.forEach(title => {
+        const card = title.closest(".card-blog"); 
+        if (title.textContent.toLowerCase().includes(inputValue)) {
+          card.style.display = "flex"; 
+        } else {
+          card.style.display = "none"; 
+        }
+      });
+    })
+  }
+
 }

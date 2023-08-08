@@ -24,33 +24,38 @@ import lgThumbnail from "lightgallery/plugins/thumbnail/lg-thumbnail.min.js";
 // Усі стилі
 import "../../scss/libs/gallery/lightgallery-bundle.scss";
 
-
 function initLightGallery() {
- 
   if (document.querySelector("[data-gallery-slider]")) {
-    
-      lightGallery(document.querySelector("[data-gallery-slider]"), {
-        licenseKey: "your_license_key",
-        speed: 500,
-        loop: true,
-        plugins: [lgThumbnail],
-        licenseKey: "7EC452A9-0CFD441C-BD984C7C-17C8456E",
-        selector: 'a',
-      });
+    lightGallery(document.querySelector("[data-gallery-slider]"), {
+      licenseKey: "your_license_key",
+      speed: 500,
+      loop: true,
+      plugins: [lgThumbnail],
+      licenseKey: "7EC452A9-0CFD441C-BD984C7C-17C8456E",
+      selector: "a",
+    });
   }
 
   if (document.querySelector("[data-gallery-main]")) {
-   
     lightGallery(document.querySelector("[data-gallery-main]"), {
       licenseKey: "your_license_key",
       speed: 500,
       loop: true,
       plugins: [lgThumbnail],
       licenseKey: "7EC452A9-0CFD441C-BD984C7C-17C8456E",
-      selector: '.card-gallery__thumbnail',
+      selector: ".card-gallery__thumbnail",
     });
-}
-}
-initLightGallery()
+  }
 
-
+  if (document.querySelector("[data-gallery-latest-works]")) {
+    lightGallery(document.querySelector("[data-gallery-latest-works]"), {
+      licenseKey: "your_license_key",
+      speed: 500,
+      loop: true,
+      plugins: [lgThumbnail],
+      licenseKey: "7EC452A9-0CFD441C-BD984C7C-17C8456E",
+      selector: ".latest__img",
+    });
+  }
+}
+initLightGallery();

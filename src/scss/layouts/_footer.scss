@@ -10,6 +10,7 @@
     @include flex-sb-center($gap: 0);
     @include adaptiveValue("gap", 40, 20);
     flex-wrap: wrap;
+    flex-direction: column;
 
 
   }
@@ -20,27 +21,14 @@
     text-align: center;
   }
 
-  &__addrees {
-    order: -1;
-    address {
-      line-height: 120%;
-      font-weight: var(--fw-slim);
-      color: var(--text-co);
-      @include adaptiveValue('font-size',18,14);
-      @media (any-hover: hover) {
-        
-        &:hover {
-          color: var(--black-co);
-        }
-      }
-    }
-  }
 }
 
 .socials {
-  align-self: flex-start;
+  
+
   // .socials__list
   &__list {
+    align-self: center;
     display: flex;
     flex-wrap: wrap;
     @include adaptiveValue("gap", 20, 15);
