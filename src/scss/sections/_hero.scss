@@ -16,6 +16,7 @@
   &__content {
     padding-left: rem(30);
     padding-bottom: rem(15);
+    padding-right: rem(30);
 
     @media (max-width: $breakpoint768){
       padding-left: rem(15);

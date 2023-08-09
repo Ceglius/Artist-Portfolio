@@ -29,20 +29,23 @@
   &__title {
     @include adaptiveValue("font-size", 55, 45);
     @include adaptiveValue('margin-bottom',30,25);
+    line-height: 1.2;
 
     &--2 {
       @include adaptiveValue("font-size", 45, 35);
-
       @include adaptiveValue('margin-bottom',25,20);
+      line-height: 1.2;
     }
 
     &--3 {
       @include adaptiveValue("font-size", 40, 30);
       @include adaptiveValue('margin-bottom',20,17);
+      line-height: 1.2;
     }
     &--4 {
       @include adaptiveValue("font-size", 35, 30);
       @include adaptiveValue('margin-bottom',17,14);
+      line-height: 1.2;
 
     }
   }
