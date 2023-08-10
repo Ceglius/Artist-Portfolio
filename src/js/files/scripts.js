@@ -7,11 +7,13 @@ import * as flsFunctions from "./functions.js";
 // })
 
 window.addEventListener("load", function(e) {
-
-  autoPaddingTop()
+  if (fsLightbox) {
+    fsLightbox.props.showThumbsOnMount = true;
+  }
+  autoPaddingTop();
   galleryNav();
   blogCardReverse();
-  blogsSearch()
+  blogsSearch();
 });
 
 function blogCardReverse() {
@@ -33,10 +35,19 @@ function galleryNav() {
     galleryNav.forEach((el, _i, arr) => {
       el.addEventListener("click", function() {
         const idGroup = el.getAttribute("data-group");
-    
+
         flsFunctions.removeClasses(arr, "active");
-        el.classList.add("active");
         showImagesByGroup(idGroup);
+
+        const allVisible = document.querySelectorAll(".card-gallery.visible a");
+
+        const allImageUrl = [...allVisible].map((data) =>
+          data.setAttribute(`data-fslightbox`, `${idGroup}`)
+        );
+
+        refreshFsLightbox();
+
+        el.classList.add("active");
       });
     });
   }
@@ -44,16 +55,18 @@ function galleryNav() {
   function showImagesByGroup(dataValue) {
     if (dataValue === "All") {
       allImages.forEach((element) => {
-        element.style.display = "block";
+        element.classList.add("visible");
+        element.classList.remove("hidden");
       });
     } else {
       const array = document.querySelectorAll(`[data-group="${dataValue}"]`);
       allImages.forEach((element) => {
-        element.style.display = "none";
-
-        array.forEach((element) => {
-          element.style.display = "block";
-        });
+        element.classList.add("hidden");
+        element.classList.remove("visible");
+      });
+      array.forEach((element) => {
+        element.classList.add("visible");
+        element.classList.remove("hidden");
       });
     }
   }
@@ -77,25 +90,23 @@ function autoPaddingTop() {
   }
 }
 
-
 function blogsSearch() {
-  const blogForm = document.querySelector('.form-blog');
-  const blogFormInput = document.querySelector('.form-blog__input');
+  const blogForm = document.querySelector(".form-blog");
+  const blogFormInput = document.querySelector(".form-blog__input");
   const blogsTitles = document.querySelectorAll(".card-blog__body h2");
-  
+
   if (blogForm) {
     blogForm.addEventListener("keyup", () => {
       const inputValue = blogFormInput.value.toLowerCase();
-      
-      blogsTitles.forEach(title => {
-        const card = title.closest(".card-blog"); 
+
+      blogsTitles.forEach((title) => {
+        const card = title.closest(".card-blog");
         if (title.textContent.toLowerCase().includes(inputValue)) {
-          card.style.display = "flex"; 
+          card.style.display = "flex";
         } else {
-          card.style.display = "none"; 
+          card.style.display = "none";
         }
       });
-    })
+    });
   }
-
 }

@@ -26,7 +26,7 @@
 
     // .latest__card
     &__card {
-        cursor: pointer;
+        
 
     }
 
@@ -46,8 +46,11 @@
 
     // .latest__img
     &__img {
+        
+        display: block;
         padding-bottom: calc(340 / 480 * 100%);
-        // @include adaptiveValue('padding-bottom',240,150,);
+    
+       
     }   
 
     // .latest__img--ibg

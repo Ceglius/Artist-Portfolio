@@ -59,20 +59,24 @@
   // .gallery__card
 
   &__card {
-    // flex: 1 1 rem(390);
-    // align-self: flex-start;
 
-    &:last-child {
-      
-    }
-    @media (max-width: $breakpoint768) {
-      flex-basis: 40%;
-    }
+
+    // @media (max-width: $breakpoint768) {
+    //   flex-basis: 40%;
+    // }
   }
 }
 
 .card-gallery {
   // .card-gallery__body
+  &.visible {
+    display: block;
+  }
+
+  &.hidden {
+    display: none;
+
+  }
 
   &__body {
   }
@@ -81,7 +85,9 @@
   &__thumbnail {
     display: block;
     padding-bottom: 80%;
+
     img {
+      
     }
   }
 
