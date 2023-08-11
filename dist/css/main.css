@@ -1919,6 +1919,14 @@ body.locked {
   align-items: center;
 }
 
+.blog__card._show {
+  display: flex;
+}
+
+.blog__card._hide {
+  display: none;
+}
+
 .form-blog {
   max-width: 25rem;
 }

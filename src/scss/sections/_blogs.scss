@@ -31,6 +31,16 @@
 
   // .blog__card
   &__card {
+
+    &._show {
+      display: flex;
+
+    }
+
+    &._hide {
+      display: none;
+      
+    }
   }
 }
 
