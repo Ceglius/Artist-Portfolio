@@ -1,48 +1,21 @@
 const gulp = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const rename = require("gulp-rename");
-const webpack = require("webpack-stream");
-const TerserPlugin = require("terser-webpack-plugin");
 const named = require("vinyl-named");
-const webPackConfig = require("./config/webpack.uncompressed.script.config");
-let webPackConfigBeautify = Object.assign({}, webPackConfig);
+const concat = require('gulp-concat');
 const vinylFtp = require('vinyl-ftp');
-webPackConfigBeautify.optimization = {
-  minimizer: [
-    new TerserPlugin({
-      extractComments: false,
-      terserOptions: {
-        ecma: undefined,
-        warnings: false,
-        parse: {},
-        compress: {
-          defaults: false,
-          unused: true,
-        },
-        mangle: false,
-        module: false,
-        toplevel: true,
-        keep_classnames: true,
-        keep_fnames: true,
-        format: {
-          beautify: true,
-        },
-      },
-    }),
-  ],
-};
+
+
+
+// js unminified
+
 function js() {
   return gulp
-    .src("src/js/app.js")
+  .src(["src/js/files/scripts.js","!src/js/files/animations.js", "src/js/files/sliders.js"])
     .pipe(named())
-    .pipe(
-      webpack({
-        config: webPackConfigBeautify,
-      })
-    )
-    .pipe(gulp.dest("dist/"));
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest("dist/js"));
 }
-
 // sass
 function buildStyles() {
   return gulp

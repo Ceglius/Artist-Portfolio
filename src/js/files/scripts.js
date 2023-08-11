@@ -1,10 +1,7 @@
-import * as flsFunctions from "./functions.js";
-
-// window.addEventListener("click", function (e) {
-//   function documentActions(e) {
-//     const targetElement = e.target;
-//   }
-// })
+import * as flsFunctions from "./files/functions.js";
+flsFunctions.menuInit()
+flsFunctions.hideHeader()
+flsFunctions.placeholder()
 
 window.addEventListener("load", function(e) {
   if (fsLightbox) {
@@ -44,9 +41,8 @@ function galleryNav() {
         const allImageUrl = [...allVisible].map((data) =>
           data.setAttribute(`data-fslightbox`, `${idGroup}`)
         );
-
         refreshFsLightbox();
-
+        fsLightbox.props.showThumbsOnMount = true;
         el.classList.add("active");
       });
     });

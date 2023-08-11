@@ -34,7 +34,7 @@ module.exports = merge(common, {
           enforce: true,
         },
         libs: {
-          test: /[\\/]libs[\\/]/,
+          test: /[\\/]libs[\\/].*fslightbox\.js$/,
           name: "vendors",
           chunks: "initial",
           priority: 10,
